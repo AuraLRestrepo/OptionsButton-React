@@ -17,7 +17,9 @@ export default function App() {
         options={optionsButton}
         iconName="Headphones"
         radiusPrincipalButton={50}
-        backgroundPrincipalButton={'#FFFC8E'}
+        borderPrincipalButton={4}
+        colorBorder={'#B9B51C'}
+        backgroundPrincipalButton={'#FFFFFF'}
       />
     </div>
   );

@@ -9,6 +9,9 @@ export default function OptionsButton(props) {
       options={props.options}
       iconName={props.iconName}
       radiusPrincipalButton={props.radiusPrincipalButton}
+      borderPrincipalButton={props.borderPrincipalButton}
+      colorBorder={props.colorBorder}
+      backgroundPrincipalButton={props.backgroundPrincipalButton}
     />
   );
 }

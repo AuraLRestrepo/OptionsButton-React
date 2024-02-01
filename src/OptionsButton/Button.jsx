@@ -2,24 +2,25 @@ import React, { useState } from 'react';
 import Icon from '../Icons/ReactIcons';
 
 export default function Button(props) {
-  const [backdrop, setBackdrop] = useState(false);
+  const [activeButton, setActiveButton] = useState(false);
 
-  const handleActiveBackdrop = () => {
-    return setBackdrop(!backdrop);
+  const handleActiveactiveButton = () => {
+    return setActiveButton(!activeButton);
   };
 
   const styleDinamicPrincipalButton = {
-    radiusButton: props.radiusPrincipalButton + '%',
+    borderRadius: props.radiusPrincipalButton + '%',
+    border: props.borderPrincipalButton + 'px solid' + props.colorBorder,
     background: props.backgroundPrincipalButton,
   }
 
   return (
-    <div className={props.activeBackdrop && backdrop ? `backdrop` : null}>
-      <button className="button__container" style={styleDinamicPrincipalButton} onClick={handleActiveBackdrop}>
-        <Icon iconName={props.iconName} />
+    <div className={props.activeBackdrop && activeButton ? `backdrop` : null}>
+      <button className="button__container" style={styleDinamicPrincipalButton} onClick={handleActiveactiveButton}>
+        {!activeButton ? (<Icon iconName={props.iconName} />) : (<Icon iconName={'X'} />)}
       </button>
       <div className="collapse__container">
-        {backdrop &&
+        {activeButton &&
           props.options.map((option, index) => (
             <a href="" key={index} className="collapse-intern">
               <span className="collapse_option">{option.option} </span>
