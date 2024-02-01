@@ -8,6 +8,7 @@ export default function OptionsButton(props) {
       activeBackdrop={props.activeBackdrop}
       options={props.options}
       iconName={props.iconName}
+      radiusPrincipalButton={props.radiusPrincipalButton}
     />
   );
 }

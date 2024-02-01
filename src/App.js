@@ -16,6 +16,8 @@ export default function App() {
         activeBackdrop={true}
         options={optionsButton}
         iconName="Headphones"
+        radiusPrincipalButton={50}
+        backgroundPrincipalButton={'#FFFC8E'}
       />
     </div>
   );

@@ -8,9 +8,14 @@ export default function Button(props) {
     return setBackdrop(!backdrop);
   };
 
+  const styleDinamicPrincipalButton = {
+    radiusButton: props.radiusPrincipalButton + '%',
+    background: props.backgroundPrincipalButton,
+  }
+
   return (
     <div className={props.activeBackdrop && backdrop ? `backdrop` : null}>
-      <button className="button__container" onClick={handleActiveBackdrop}>
+      <button className="button__container" style={styleDinamicPrincipalButton} onClick={handleActiveBackdrop}>
         <Icon iconName={props.iconName} />
       </button>
       <div className="collapse__container">
