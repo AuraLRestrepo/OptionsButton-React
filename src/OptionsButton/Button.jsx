@@ -1,17 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icon from '../Icons/ReactIcons';
 
 export default function Button(props) {
   const [activeButton, setActiveButton] = useState(false);
 
-  const handleActiveactiveButton = () => {
-    return setActiveButton(!activeButton);
+   const handleActiveactiveButton = () => {
+    return (
+      setTimeout(() => {
+        setActiveButton(!activeButton)
+      }, 100)
+    );
   };
 
   const styleDinamicPrincipalButton = {
     borderRadius: props.radiusPrincipalButton + '%',
     border: props.borderPrincipalButton + 'px solid' + props.colorBorder,
     background: props.backgroundPrincipalButton,
+  }
+
+  const styleDinamicCollapseOptions = {
+    background: props.collapseOptions.backgroud || '#FFF',
+    color: props.collapseOptions.color,
+    border: props.collapseOptions.border + 'px solid' + props.collapseOptions.colorBorder,
+    borderRadius: props.collapseOptions.borderRadius + 'px'
+  }
+
+  const styleDinamicTxtOptions = {
+    color: props.txtOptions.color,
+    fontWeight: props.txtOptions.fontWeight || 400
   }
 
   return (
@@ -22,9 +38,9 @@ export default function Button(props) {
       <div className="collapse__container">
         {activeButton &&
           props.options.map((option, index) => (
-            <a href="" key={index} className="collapse-intern">
-              <span className="collapse_option">{option.option} </span>
-              <span className="collapse_icon">
+            <a onClick={option.page} key={index}  className={!activeButton ? 'uncollapse-intern' : 'collapse-intern'}>
+              <span style={styleDinamicTxtOptions} className="collapse_option">{option.option} </span>
+              <span style={styleDinamicCollapseOptions} className="collapse_icon">
                 <Icon iconName={option.icon} />
               </span>
             </a>

@@ -12,6 +12,8 @@ export default function OptionsButton(props) {
       borderPrincipalButton={props.borderPrincipalButton}
       colorBorder={props.colorBorder}
       backgroundPrincipalButton={props.backgroundPrincipalButton}
+      collapseOptions={props.collapseOptions}
+      txtOptions={props.txtOptions}
     />
   );
 }
